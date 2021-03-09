@@ -26,7 +26,7 @@ namespace TestApp
                 options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Test API", Version = "v1" });
             });
 
-            services.AddScoped<ValidIpAddress>();
+            services.AddScoped<ValidIpAddressFilter>();
 
         }
 

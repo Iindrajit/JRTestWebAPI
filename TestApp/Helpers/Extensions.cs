@@ -9,6 +9,11 @@ namespace TestApp.Helpers
 {
     public static class Extensions
     {
+        /// <summary>
+        /// ConfigureExceptionHandler enables centralised exception handling. 
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="env"></param>
         public static void ConfigureExceptionHandler(this IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

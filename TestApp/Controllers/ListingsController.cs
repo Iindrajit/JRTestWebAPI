@@ -23,6 +23,12 @@ namespace TestApp.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        /// GetQuote gets quote. It filters out listings that don't support the number of passengers. With the remaining listings,
+        /// it calculates total price and returns the results sorted by total price.
+        /// </summary>
+        /// <param name="numberOfPassengers"></param>
+        /// <returns></returns>
         [HttpGet(), Route("{numberOfPassengers:int:min(1)}")]
         public async Task<IActionResult> GetQuote(int numberOfPassengers)
         {

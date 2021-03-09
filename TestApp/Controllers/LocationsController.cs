@@ -12,7 +12,7 @@ namespace TestApp.Controllers
 {
     [Route("api/location")]
     [ApiController]
-    [ServiceFilter(typeof(ValidIpAddress))]
+    [ServiceFilter(typeof(ValidIpAddressFilter))]
     public class LocationsController : ControllerBase
     {
         private readonly IConfiguration _config;
@@ -24,6 +24,11 @@ namespace TestApp.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        /// Takes IP and returns the city location that corresponds to this IP address.
+        /// </summary>
+        /// <param name="ipAddress"></param>
+        /// <returns></returns>
         [HttpGet("{ipAddress}")]
         public async Task<IActionResult> GetCityByIp(string ipAddress)
         {

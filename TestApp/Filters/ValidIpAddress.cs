@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace TestApp.Filters
 {
-    public class ValidIpAddress : ActionFilterAttribute
+    /// <summary>
+    /// ValidIpAddressFilter action filter responds with Bad Request HttpStatus Code if the IP Address passed in the URL is invalid.
+    /// </summary>
+    public class ValidIpAddressFilter : ActionFilterAttribute
     {
         public override Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
